@@ -48,7 +48,17 @@ router.get("/:idUser", (req, res) => {
         return res.status(400).json(errors);
     }
 
-    res.json(user);
+    const fullUser = {
+        idUser: user.idUser,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        birthday: user.birthday,
+        gender: user.gender,
+        superUser: user.superUser
+    };
+
+    res.json(fullUser);
 });
 
 // @route   POST api/users/
