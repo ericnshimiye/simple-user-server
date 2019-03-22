@@ -10,7 +10,6 @@ module.exports = function validateEditInput(data) {
     data.email = !isEmpty(data.email) ? data.email : "";
     data.birthday = !isEmpty(data.birthday) ? data.birthday : "";
     data.gender = !isEmpty(data.gender) ? data.gender : "";
-    data.superUser = !isEmpty(data.superUser) ? data.superUser : "";
 
     if (!Validator.isLength(data.firstName, { min: 2, max: 30 })) {
         errors.firstName = "First name must be between 2 and 30 characters";
@@ -48,12 +47,8 @@ module.exports = function validateEditInput(data) {
         errors.gender = "Gender field is required";
     }
 
-    if(!Validator.isBoolean(data.superUser)){
+    if(data.superUser !== true && data.superUser !== false){
         errors.superUser = "Super user field is invalid. Must be a boolean."
-    }
-
-    if(Validator.isEmpty(data.superUser)){
-        errors.superUser = "Super user field is required";
     }
 
     return {
