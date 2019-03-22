@@ -11,6 +11,7 @@ var users = [
         email: 'utibulate@perdu.com',
         birthday: new Date(1889,04,20),
         gender: 'male',
+        province: 'Ontario',
         superUser: false
     },
     {
@@ -20,6 +21,7 @@ var users = [
         email: 'ytousmourir@perdu.com',
         birthday: new Date(1960,08,07),
         gender: 'male',
+        province: 'Ontario',
         superUser: false
     }
 ];
@@ -55,6 +57,7 @@ router.get("/:idUser", (req, res) => {
         email: user.email,
         birthday: user.birthday,
         gender: user.gender,
+        province: user.province,
         superUser: user.superUser
     };
 
@@ -86,10 +89,7 @@ router.post("/", (req, res) => {
         idUser: biggerId + 1,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
-        email: req.body.email,
-        birthday: req.body.birthday,
-        gender: req.body.gender,
-        superUser: req.body.superUser
+        email: req.body.email
     };
 
     const newUsersList = [...users, newUser];
@@ -137,6 +137,7 @@ router.post("/:idUser", (req, res) => {
         email: req.body.email,
         birthday: req.body.birthday,
         gender: req.body.gender,
+        province: req.body.province,
         superUser: req.body.superUser
     };
 

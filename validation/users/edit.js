@@ -10,6 +10,7 @@ module.exports = function validateEditInput(data) {
     data.email = !isEmpty(data.email) ? data.email : "";
     data.birthday = !isEmpty(data.birthday) ? data.birthday : "";
     data.gender = !isEmpty(data.gender) ? data.gender : "";
+    data.province = !isEmpty(data.province) ? data.province : "";
 
     if (!Validator.isLength(data.firstName, { min: 2, max: 30 })) {
         errors.firstName = "First name must be between 2 and 30 characters";
@@ -49,6 +50,10 @@ module.exports = function validateEditInput(data) {
 
     if(data.superUser !== true && data.superUser !== false){
         errors.superUser = "Super user field is invalid. Must be a boolean."
+    }
+
+    if (!Validator.isLength(data.province, { max: 30 })) {
+        errors.province = "Province name must not exceed 30 characters";
     }
 
     return {
