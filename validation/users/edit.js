@@ -9,6 +9,8 @@ module.exports = function validateEditInput(data) {
     data.lastName = !isEmpty(data.lastName) ? data.lastName : "";
     data.email = !isEmpty(data.email) ? data.email : "";
     data.birthday = !isEmpty(data.birthday) ? data.birthday : "";
+    data.gender = !isEmpty(data.gender) ? data.gender : "";
+    data.superUser = !isEmpty(data.superUser) ? data.superUser : "";
 
     if (!Validator.isLength(data.firstName, { min: 2, max: 30 })) {
         errors.firstName = "First name must be between 2 and 30 characters";
