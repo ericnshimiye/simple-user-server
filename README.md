@@ -2,7 +2,7 @@
 
 # simple-user-server
 
-Simple node.js server to test basic REST operations on an in memory users list.
+Simple node.js server to test basic REST operations over an in-memory users list.
 
 ### Run
 
@@ -15,7 +15,7 @@ npm i
 then, start the server with the following
 
 ```bat
-node run server
+npm run server
 ```
 
 ### Documentation
