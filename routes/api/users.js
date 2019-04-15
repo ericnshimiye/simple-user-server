@@ -83,7 +83,7 @@ router.post("/", (req, res) => {
     }
 
     const idUserList = users.map(u => u.idUser);
-    const biggerId = Math.max(...idUserList);
+    const biggerId = idUserList.length > 0 ? Math.max(...idUserList) : 0;
 
     const newUser = {
         idUser: biggerId + 1,
