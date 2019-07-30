@@ -47,7 +47,7 @@ router.get("/:idUser", (req, res) => {
     
     if(!user){
         let errors = { message : "User not found" };
-        return res.status(400).json(errors);
+        return res.status(404).json(errors);
     }
 
     const fullUser = {
